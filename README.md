@@ -7,6 +7,7 @@ Chulan 的个人 Agent Skills，收录 Git 等日常开发工作流，支持按�
 ### Git
 
 - [git-commit-zh](skills/git-commit-zh/SKILL.md)：根据 Git 变更生成中文 Conventional Commit 消息。有暂存内容时仅覆盖暂存变更；默认只生成消息，明确要求后才执行提交。
+- [Merge Conflict Resolution](skills/merge-conflict-resolution/SKILL.md)：安全解决 Git merge、rebase、cherry-pick 和 revert 冲突，验证双方意图与合并结果；继续操作需要明确授权。
 
 ## 安装
 
@@ -22,6 +23,12 @@ npx skills add Chulan-824/skills --list
 
 ```bash
 npx skills add Chulan-824/skills --skill git-commit-zh --agent codex --global
+```
+
+安装 Merge Conflict Resolution：
+
+```bash
+npx skills add Chulan-824/skills --skill merge-conflict-resolution --agent codex --global
 ```
 
 仅安装到当前项目时，去掉 `--global`。为其他 Agent 安装时，修改 `--agent`；省略该参数可交互选择。
@@ -53,7 +60,10 @@ skills/
 ├── LICENSE
 ├── README.md
 └── skills/
-    └── git-commit-zh/
+    ├── git-commit-zh/
+    │   └── SKILL.md
+    └── merge-conflict-resolution/
+        ├── LICENSE
         └── SKILL.md
 ```
 
@@ -62,3 +72,5 @@ skills/
 ## 许可证
 
 [MIT](LICENSE)
+
+Merge Conflict Resolution 译自 [anur4ag/pr-completion](https://github.com/anur4ag/pr-completion) 插件 0.3.0 的同名技能，保留其 [MIT 许可证](skills/merge-conflict-resolution/LICENSE)及原作者版权声明。
